@@ -39,25 +39,7 @@
         </table>
 
     </div>
-    <div th:if="${not #lists.isEmpty(sepetElements)}">
-        <h2>Product List</h2>
-        <table class="table table-striped">
-            <tr>
-               
-                <th>Product Id</th>
-                <th>Description</th>
-                
-            </tr>
-            <tr th:each="sepetElement : ${sepetElements}">
-                
-                <td th:text="${sepetElements.productId}">Product Id</td>
-                <td th:text="${sepetElements.description}">descirption</td>
-                
-            </tr>
-        </table>
-
-    </div>
 </div>
- 
+
 </body>
 </html>

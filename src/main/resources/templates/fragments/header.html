@@ -18,15 +18,28 @@
     <div th:fragment="header">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#" th:href="@{/}">Anasayfa</a>
+                <div class="navbar-header col-md-9">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                     <ul class="nav navbar-nav">
                         <li><a href="#" th:href="@{/consumerProducts}">Ürünler</a></li>
                         <li><a href="#" th:href="@{/viewCart}">Sepetim</a></li>
+                        <li><a href="#" th:href="@{/products}">Products</a></li>
+                        <li><a href="#" th:href="@{/product/new}">Create Product</a></li>
                     </ul>
 
                 </div>
+               <form class="form-horizontal" th:object="${product}" th:action="@{/product}" method="post"> 
+                <div class="input-group col-md-3">
+                    <input type="text" class="form-control input-lg" placeholder="Enter a Text" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+               </form>
             </div>
+            
         </nav>
 
         <div class="jumbotron">
@@ -37,7 +50,10 @@
                     <h3>Spring Boot Web App</h3>
                 </div>
             </div>
-
+            <div class="row text-center">
+                <!--  <img src="../../static/images/NewBannerBOOTS_2.png" width="400"
+                     th:src="@{/images/NewBannerBOOTS_2.png}"/>-->
+            </div>
         </div>
     </div>
 </div>

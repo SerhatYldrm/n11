@@ -104,6 +104,14 @@ public class ProductController {
     	model.addAttribute("products", productService.listAllProducts());
     	return "products";
     }
+    
+    @RequestMapping("product/search/{name}")
+    public String searchProduct(@PathVariable String name, Model model){
+    	
+    	model.addAttribute("products", productService.listAllProducts());
+    	return "products";
+    }
+    
 
     @RequestMapping(value = "product", method = RequestMethod.POST)
     public String saveProduct(Product product){
