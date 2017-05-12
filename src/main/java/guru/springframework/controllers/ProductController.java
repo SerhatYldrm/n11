@@ -43,6 +43,14 @@ public class ProductController {
         model.addAttribute("product", new Product());
         return "productform";
     }
+    
+    @RequestMapping("product/delete/{id}")
+    public String deleteProduct(@PathVariable Integer id, Model model){
+    	
+    	productService.deleteProduct(id);
+    	model.addAttribute("products", productService.listAllProducts());
+    	return "products";
+    }
 
     @RequestMapping(value = "product", method = RequestMethod.POST)
     public String saveProduct(Product product){
