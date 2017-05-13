@@ -27,7 +27,9 @@ public class ProductRepositoryTest {
     public void testSaveProduct(){
         //setup product
         Product product = new Product();
-        product.setDescription("Spring Framework Guru Shirt");
+        product.setCategory("category1");
+        product.setTitle("title1");
+        product.setSubtitle("subtitle1");
         product.setPrice(new BigDecimal("18.95"));
         product.setProductId("1234");
 
@@ -43,15 +45,15 @@ public class ProductRepositoryTest {
 
         //should equal
         assertEquals(product.getId(), fetchedProduct.getId());
-        assertEquals(product.getDescription(), fetchedProduct.getDescription());
+        assertEquals(product.getTitle(), fetchedProduct.getTitle());
 
         //update description and save
-        fetchedProduct.setDescription("New Description");
+        fetchedProduct.setTitle("New Description");
         productRepository.save(fetchedProduct);
 
         //get from DB, should be updated
         Product fetchedUpdatedProduct = productRepository.findOne(fetchedProduct.getId());
-        assertEquals(fetchedProduct.getDescription(), fetchedUpdatedProduct.getDescription());
+        assertEquals(fetchedProduct.getTitle(), fetchedUpdatedProduct.getTitle());
 
         //verify count of products in DB
         long productCount = productRepository.count();

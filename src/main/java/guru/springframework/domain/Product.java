@@ -13,16 +13,42 @@ public class Product {
     private Integer version;
 
     private String productId;
-    private String description;
+    //yeni eklediklerim
+    private String title;
+    private String subtitle;
+    private BigDecimal disprice;
+        
+    private String category;
     private String imageUrl;
     private BigDecimal price;
 
-    public String getDescription() {
-        return description;
+    
+    //TITLE
+    public String getTitle() {
+        return title;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    //SUBTITLE
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+    
+    
+    //CATEGORY
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Integer getVersion() {
@@ -63,5 +89,15 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+    
+    
+    // DISPRICE
+    public BigDecimal getDisprice() {
+        return disprice;
+    }
+
+    public void setDisprice(BigDecimal disprice) {
+        this.disprice = disprice;
     }
 }
