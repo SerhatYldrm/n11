@@ -60,16 +60,8 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 
         log.info("Saved Mug - id:" + mug.getId());
         
-<<<<<<< Updated upstream
+
         */
-=======
-        
-        Sepet deneme = new Sepet();
-        
-        deneme.setId(2);
-        deneme.setPrice(new BigDecimal("11.95"));
-        deneme.setProductId("168639393495335947");
-        sepetRepository.save(deneme);
->>>>>>> Stashed changes
+
     }
 }

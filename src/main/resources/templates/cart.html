@@ -16,15 +16,21 @@
         <table class="table table-striped">
             <tr>
                 
-                <th>Ürün</th>
-                <th>Fiyat</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Discount Price</th>
                
                 
             </tr>
-            <tr th:each="sepetElement : ${sepetElements}">
+            <tr th:each="cartElement : ${sepetElements}">
                 
-                <td th:text="${sepetElement.description}">description</td>
-                <td th:text="${sepetElement.price}">price</td>
+                 <td th:text="${cartElement.title}">Title</td>
+                <td th:text="${cartElement.subtitle}">subtitle</td>
+                <td th:text="${cartElement.category}">category</td>
+                <td th:text="${cartElement.price}">price</td>
+                <td th:text="${cartElement.disprice}">discount price</td>
                 
                 
             </tr>

@@ -65,10 +65,12 @@ public class ProductController {
     	
     	product = productService.getProductById(id);
     	
-    	cart.setId(product.getId());
+    	cart.setTitle(product.getTitle());
+    	cart.setSubtitle(product.getSubtitle());
+    	cart.setDisprice(product.getDisprice());
+    	cart.setCategory(product.getCategory());
     	cart.setPrice(product.getPrice());
-    	cart.setProductId(product.getProductId());
-    	cart.setDescription(product.getDescription());
+    	
     	
     	
     	
