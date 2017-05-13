@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Framework Guru</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(sepetElements)}">
+        <h2>Sepetim</h2>
+        <table class="table table-striped">
+            <tr>
+                
+                <th>Ürün</th>
+                <th>Fiyat</th>
+               
+                
+            </tr>
+            <tr th:each="sepetElement : ${sepetElements}">
+                
+                <td th:text="${sepetElement.description}">description</td>
+                <td th:text="${sepetElement.price}">price</td>
+                
+                
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

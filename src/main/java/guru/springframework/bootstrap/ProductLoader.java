@@ -1,7 +1,10 @@
 package guru.springframework.bootstrap;
 
 import guru.springframework.domain.Product;
+
 import guru.springframework.repositories.ProductRepository;
+import guru.springframework.repositories.SepetRepository;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -10,16 +13,23 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+import guru.springframework.domain.Sepet;
 @Component
 public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     private ProductRepository productRepository;
+    private SepetRepository sepetRepository;
 
     private Logger log = Logger.getLogger(ProductLoader.class);
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+    
+    @Autowired
+    public void setSepetRepository(SepetRepository sepetRepository) {
+        this.sepetRepository = sepetRepository;
     }
 
     @Override
@@ -50,6 +60,16 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 
         log.info("Saved Mug - id:" + mug.getId());
         
+<<<<<<< Updated upstream
         */
+=======
+        
+        Sepet deneme = new Sepet();
+        
+        deneme.setId(2);
+        deneme.setPrice(new BigDecimal("11.95"));
+        deneme.setProductId("168639393495335947");
+        sepetRepository.save(deneme);
+>>>>>>> Stashed changes
     }
 }
