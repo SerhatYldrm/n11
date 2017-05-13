@@ -97,6 +97,15 @@ public class ProductController {
         return "productform";
     }
     
+    @RequestMapping("viewCart/product/payment")
+    public String payment(Model model){
+    	
+    	sepetService.deleteAllItems();
+    	model.addAttribute("sepetElements", sepetService.listAllSepet());
+    	
+        return "cart";
+    }
+    
     @RequestMapping("product/delete/{id}")
     public String deleteProduct(@PathVariable Integer id, Model model){
     	
@@ -105,6 +114,7 @@ public class ProductController {
     	return "products";
     }
     
+
     @RequestMapping("cart/delete/{id}")
     public String deleteCart(@PathVariable Integer id, Model model){
     	
@@ -118,6 +128,7 @@ public class ProductController {
     	
     	model.addAttribute("products", productService.searchByName(name));
     	return "products";
+
     }
     
     

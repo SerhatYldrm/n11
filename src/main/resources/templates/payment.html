@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Payment</title>
+</head>
+<body>
+	<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2> Ödeme Bilgileri </h2>
+    <div>
+        <form class="form-horizontal" th:action="@{/payment}" method="post">
+            
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Kart Üzerindeki İsim:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{payName}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Kart No:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{payCardNo}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">SKT:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{payCardSkt}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CVV:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{payCardCvv}"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-default">Ödeme Yap</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

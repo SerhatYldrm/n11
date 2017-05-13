@@ -10,5 +10,8 @@ public interface SepetService {
 
     Sepet saveSepet(Sepet product);
     
+
     void deleteCart(Integer id);
+
+    void deleteAllItems();
 }
