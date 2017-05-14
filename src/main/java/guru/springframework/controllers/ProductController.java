@@ -105,12 +105,22 @@ public class ProductController {
     	return "products";
     }
     
+    @RequestMapping("cart/delete/{id}")
+    public String deleteCart(@PathVariable Integer id, Model model){
+    	
+    	sepetService.deleteCart(id);
+    	model.addAttribute("sepetElements", sepetService.listAllSepet());
+    	return "cart";
+    }
+    
     @RequestMapping("product/search/{name}")
     public String searchProduct(@PathVariable String name, Model model){
     	
-    	model.addAttribute("products", productService.listAllProducts());
+    	model.addAttribute("products", productService.searchByName(name));
     	return "products";
     }
+    
+    
     
 
     @RequestMapping(value = "product", method = RequestMethod.POST)

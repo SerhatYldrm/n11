@@ -28,4 +28,11 @@ public class SepetServiceImpl implements SepetService {
     public Sepet saveSepet(Sepet sepet) {
         return sepetRepository.save(sepet);
     }
+    
+    @Override
+	public void deleteCart(Integer id) {
+		sepetRepository.delete(id);
+	}
+    
+    
 }

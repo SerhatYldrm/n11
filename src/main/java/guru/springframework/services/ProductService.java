@@ -12,7 +12,7 @@ public interface ProductService {
     
     void deleteProduct(Integer id);
     
-    void searchByName(String name);
+    Product searchByName(String name);
     
     
 }

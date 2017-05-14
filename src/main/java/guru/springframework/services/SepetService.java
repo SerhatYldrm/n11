@@ -9,4 +9,6 @@ public interface SepetService {
     Sepet getSepetById(Integer id);
 
     Sepet saveSepet(Sepet product);
+    
+    void deleteCart(Integer id);
 }

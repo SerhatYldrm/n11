@@ -21,6 +21,7 @@
                 <th>Category</th>
                 <th>Price</th>
                 <th>Discount Price</th>
+                <th>Discard</th>
                
                 
             </tr>
@@ -31,6 +32,7 @@
                 <td th:text="${cartElement.category}">category</td>
                 <td th:text="${cartElement.price}">price</td>
                 <td th:text="${cartElement.disprice}">discount price</td>
+                <td><a th:href="${'/cart/delete/' + cartElement.id}">Delete</a></td>
                 
                 
             </tr>
